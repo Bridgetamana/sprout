@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { LuSprout, LuChevronRight, LuMenu, LuX } from "react-icons/lu";
+import { LuSprout, LuChevronRight, LuMenu, LuX, LuMail, LuFacebook, LuTwitter, LuInstagram } from "react-icons/lu";
 import { testimonials, features, faqs} from "../components/Data"
 import FeatureCard from '../components/FeatureCard';
 import TestimonialCard from '../components/TestimonialCard';
@@ -117,6 +117,102 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <footer className="bg-stone-100 pt-24 pb-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <LuSprout className="text-emerald-700 h-6 w-6" />
+                <span className="text-xl font-semibold text-stone-800">sprout</span>
+              </div>
+              <p className="text-stone-600">
+                Making plant parenthood simple and enjoyable for everyone.
+              </p>
+              <div className="flex space-x-4">
+                <button className="p-2 text-stone-600 hover:text-emerald-700 transition-colors">
+                  <LuInstagram className="h-5 w-5" />
+                </button>
+                <button className="p-2 text-stone-600 hover:text-emerald-700 transition-colors">
+                  <LuTwitter className="h-5 w-5" />
+                </button>
+                <button className="p-2 text-stone-600 hover:text-emerald-700 transition-colors">
+                  <LuFacebook className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+            <div>
+              <h3 className="font-semibold text-stone-800 mb-4">Quick Links</h3>
+              <ul className="space-y-3">
+                <li>
+                  <button className="text-stone-600 hover:text-emerald-700">About Us</button>
+                </li>
+                <li>
+                  <button className="text-stone-600 hover:text-emerald-700">Features</button>
+                </li>
+                <li>
+                  <button className="text-stone-600 hover:text-emerald-700">Plant Quiz</button>
+                </li>
+                <li>
+                  <button className="text-stone-600 hover:text-emerald-700">Care Guides</button>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-stone-800 mb-4">Resources</h3>
+              <ul className="space-y-3">
+                <li>
+                  <button className="text-stone-600 hover:text-emerald-700">Blog</button>
+                </li>
+                <li>
+                  <button className="text-stone-600 hover:text-emerald-700">Plant Care Tips</button>
+                </li>
+                <li>
+                  <button className="text-stone-600 hover:text-emerald-700">Community</button>
+                </li>
+                <li>
+                  <button className="text-stone-600 hover:text-emerald-700">FAQs</button>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-semibold text-stone-800 mb-4">Stay Updated</h3>
+              <p className="text-stone-600 mb-4">
+                Subscribe to our newsletter for plant care tips and updates.
+              </p>
+              <form className="space-y-3">
+                <div className="flex">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 px-4 py-2 rounded-l-full border border-stone-200 focus:outline-none focus:border-emerald-700"
+                  />
+                  <button
+                    type="submit"
+                    className="bg-emerald-700 text-white px-4 py-2 rounded-r-full hover:bg-emerald-800 transition-colors"
+                  >
+                    <LuMail className="h-5 w-5" />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div className="pt-8 border-t border-stone-200">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <p className="text-stone-600 text-sm">
+                © {new Date().getFullYear()} Sprout. All rights reserved.
+              </p>
+              <div className="flex space-x-6">
+                <button className="text-stone-600 hover:text-emerald-700 text-sm">
+                  Privacy Policy
+                </button>
+                <button className="text-stone-600 hover:text-emerald-700 text-sm">
+                  Terms of Service
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
