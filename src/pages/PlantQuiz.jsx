@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { LuChevronRight, LuArrowLeft } from "react-icons/lu";
-import { questions } from "../components/Data";
+import { questions } from "../components/data";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
