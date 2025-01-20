@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { LuSprout, LuChevronRight, LuMenu, LuX, LuMail, LuFacebook, LuTwitter, LuInstagram } from "react-icons/lu";
 import { Link } from 'react-router';
-import { testimonials, features, faqs} from "../components/Data"
+import { testimonials, features, faqs} from "../components/data"
 import FeatureCard from '../components/FeatureCard';
 import TestimonialCard from '../components/TestimonialCard';
 import FaqItem from '../components/FaqItem';
