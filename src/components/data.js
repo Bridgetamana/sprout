@@ -1,4 +1,4 @@
-import { LuLeaf, LuBell, LuHeart } from "react-icons/lu";
+import { LuLeaf, LuBell, LuHeart, LuDroplets, LuSun, LuWind, LuThermometerSun } from "react-icons/lu";
 
 
 export const features = [
@@ -148,5 +148,46 @@ export const plantMatches = [
         name: "Fiddle Leaf Fig",
         description: "Requires bright, indirect light and regular watering.",
         care: "Moderate"
+    }
+];
+
+export const plants = [
+    {
+        id: 1,
+        name: "Snake Plant",
+        scientificName: "Sansevieria trifasciata",
+    },
+    {
+        id: 2,
+        name: "Pothos",
+        scientificName: "Epipremnum aureum",
+    },
+];
+
+export const careDetails = [
+    {
+        id: 1,
+        icon: LuDroplets,
+        title: "Water Needs",
+        value: "Moderate - Weekly",
+    },
+    {
+        id: 2,
+        icon: LuSun,
+        title: "Light Requirements",
+        value: "Low to bright indirect",
+    },
+    {
+        id: 3,
+        icon: LuWind,
+        title: "Humidity",
+        value: "Average to high",
+    },
+    {
+        id: 4,
+        icon: LuThermometerSun,
+        title: "Temperature",
+        key: "temperature",
+        value: "60-80°F (15-27°C)"
     }
 ];
