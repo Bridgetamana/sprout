@@ -94,15 +94,6 @@ export const questions = [
             { id: 'intermediate', text: "Intermediate", description: "I have some experience" },
             { id: 'expert', text: "Expert", description: "I'm very experienced with plants" }
         ]
-    },
-    {
-        id: 5,
-        question: "What type of plants are you interested in?",
-        options: [
-            { id: 'indoor', text: "Indoor plants", description: "Plants that thrive indoors" },
-            { id: 'outdoor', text: "Outdoor plants", description: "Plants that thrive outdoors" },
-            { id: 'both', text: "Both", description: "A mix of indoor and outdoor plants" }
-        ]
     }
 ];
 
