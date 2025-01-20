@@ -81,7 +81,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="py-24">
+      <div id='features' className="py-24">
         <div className="max-w-[85rem] mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-stone-800 mb-16">
             Everything You Need to Thrive
@@ -93,7 +93,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="bg-stone-100 py-24 rounded-t-[3rem]">
+      <div id='testimonial' className="bg-stone-100 py-24 rounded-t-[3rem]">
         <div className="max-w-[85rem] mx-auto px-4">
           <h2 className="text-3xl font-bold text-center text-stone-800 mb-16">
             Growing Community
@@ -118,7 +118,7 @@ const HomePage = () => {
         </div>
       </div>
       <footer className="bg-stone-100 pt-24 pb-12">
-        <div className="max-w-6xl mx-auto px-4">
+        <div className="max-w-[85rem] mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div className="space-y-4">
               <div className="flex items-center space-x-2">
@@ -129,15 +129,15 @@ const HomePage = () => {
                 Making plant parenthood simple and enjoyable for everyone.
               </p>
               <div className="flex space-x-4">
-                <button className="p-2 text-stone-600 hover:text-emerald-700 transition-colors">
+                <a href="#" className="p-2 text-stone-600 hover:text-emerald-700 transition-colors">
                   <LuInstagram className="h-5 w-5" />
-                </button>
-                <button className="p-2 text-stone-600 hover:text-emerald-700 transition-colors">
+                </a>
+                <a href="#" className="p-2 text-stone-600 hover:text-emerald-700 transition-colors">
                   <LuTwitter className="h-5 w-5" />
-                </button>
-                <button className="p-2 text-stone-600 hover:text-emerald-700 transition-colors">
+                </a>
+                <a href="#" className="p-2 text-stone-600 hover:text-emerald-700 transition-colors">
                   <LuFacebook className="h-5 w-5" />
-                </button>
+                </a>
               </div>
             </div>
             <div>
@@ -148,12 +148,6 @@ const HomePage = () => {
                 </li>
                 <li>
                   <button className="text-stone-600 hover:text-emerald-700">Features</button>
-                </li>
-                <li>
-                  <button className="text-stone-600 hover:text-emerald-700">Plant Quiz</button>
-                </li>
-                <li>
-                  <button className="text-stone-600 hover:text-emerald-700">Care Guides</button>
                 </li>
               </ul>
             </div>
