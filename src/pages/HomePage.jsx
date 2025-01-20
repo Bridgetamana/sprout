@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { LuSprout, LuChevronRight, LuMenu, LuX, LuMail, LuFacebook, LuTwitter, LuInstagram } from "react-icons/lu";
+import { Link } from 'react-router';
 import { testimonials, features, faqs} from "../components/Data"
 import FeatureCard from '../components/FeatureCard';
 import TestimonialCard from '../components/TestimonialCard';
@@ -26,23 +27,23 @@ const HomePage = () => {
               {isMenuOpen ? <LuX /> : <LuMenu />}
             </button>
             <div className="hidden md:flex space-x-8 items-center">
-              <button className="text-stone-600 hover:text-emerald-700">About</button>
-              <button className="text-stone-600 hover:text-emerald-700">Features</button>
-              <button className="text-stone-600 hover:text-emerald-700">Testimonials</button>
-              <button className="bg-emerald-700 text-white px-6 py-2 rounded-full hover:bg-emerald-800 transition-all hover:scale-105">
+              <a href='#' className="text-stone-600 hover:text-emerald-700">About</a>
+              <a href="#features" className="text-stone-600 hover:text-emerald-700">Features</a>
+              <a href="#testimonial" className="text-stone-600 hover:text-emerald-700">Testimonials</a>
+              <Link to='/quiz' className="bg-emerald-700 text-white px-6 py-2 rounded-full hover:bg-emerald-800 transition-all hover:scale-105">
                 Get Started
-              </button>
+              </Link>
             </div>
           </div>
           {isMenuOpen && (
             <div className="md:hidden absolute top-20 left-0 right-0 bg-white p-4 shadow-lg z-50">
               <div className="flex flex-col space-y-4">
-                <button className="text-stone-600 hover:text-emerald-700">About</button>
-                <button className="text-stone-600 hover:text-emerald-700">Features</button>
-                <button className="text-stone-600 hover:text-emerald-700">Testimonials</button>
-                <button className="bg-emerald-700 text-white px-6 py-2 rounded-full">
+                <a href='#' className="text-stone-600 hover:text-emerald-700">About</a>
+                <a href="#features" className="text-stone-600 hover:text-emerald-700">Features</a>
+                <a href="#testimonial" className="text-stone-600 hover:text-emerald-700">Testimonials</a>
+                <Link to='/quiz' className="bg-emerald-700 text-white px-6 py-2 rounded-full">
                   Get Started
-                </button>
+                </Link>
               </div>
             </div>
           )}
@@ -61,13 +62,13 @@ const HomePage = () => {
                 and mastered plant care with Sprout.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <button className="group bg-emerald-700 text-white px-6 py-3 rounded-full hover:bg-emerald-800 transition-all hover:scale-105 flex items-center justify-center">
+                <Link to='/quiz' className="group bg-emerald-700 text-white px-6 py-3 rounded-full hover:bg-emerald-800 transition-all hover:scale-105 flex items-center justify-center">
                   Find Your Plant Match
                   <LuChevronRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-                </button>
-                <button className="border-2 border-emerald-700 text-emerald-700 px-6 py-3 rounded-full hover:bg-emerald-50 transition-all hover:scale-105">
+                </Link>
+                <Link to="/care-guide" className="border-2 border-emerald-700 text-emerald-700 px-6 py-3 rounded-full hover:bg-emerald-50 transition-all hover:scale-105">
                   Explore Care Guides
-                </button>
+                </Link>
               </div>
             </div>
             <div className="relative">
