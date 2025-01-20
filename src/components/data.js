@@ -58,3 +58,95 @@ export const faqs = [
         answer: "Definitely! We designed Sprout to be helpful for plant parents of all experience levels, with special attention to making plant care accessible for beginners."
     }
 ];
+
+export const questions = [
+    {
+        id: 1,
+        question: "How much natural light does your space receive?",
+        options: [
+            { id: 'bright', text: "Bright direct sunlight", description: "6+ hours of direct sun" },
+            { id: 'medium', text: "Medium indirect light", description: "Bright, but no direct sun" },
+            { id: 'low', text: "Low light", description: "No direct sun, away from windows" }
+        ]
+    },
+    {
+        id: 2,
+        question: "How often can you water your plants?",
+        options: [
+            { id: 'daily', text: "Daily", description: "I can check on them every day" },
+            { id: 'weekly', text: "Weekly", description: "Once a week works best" },
+            { id: 'biweekly', text: "Bi-weekly", description: "Every couple of weeks" }
+        ]
+    },
+    {
+        id: 3,
+        question: "Do you have pets at home?",
+        options: [
+            { id: 'yes', text: "Yes", description: "I have pets that might interact with plants" },
+            { id: 'no', text: "No", description: "No pets at home" }
+        ]
+    },
+    {
+        id: 4,
+        question: "What is your experience level with plants?",
+        options: [
+            { id: 'beginner', text: "Beginner", description: "I'm new to plant care" },
+            { id: 'intermediate', text: "Intermediate", description: "I have some experience" },
+            { id: 'expert', text: "Expert", description: "I'm very experienced with plants" }
+        ]
+    },
+    {
+        id: 5,
+        question: "What type of plants are you interested in?",
+        options: [
+            { id: 'indoor', text: "Indoor plants", description: "Plants that thrive indoors" },
+            { id: 'outdoor', text: "Outdoor plants", description: "Plants that thrive outdoors" },
+            { id: 'both', text: "Both", description: "A mix of indoor and outdoor plants" }
+        ]
+    }
+];
+
+export const plantMatches = [
+    {
+        id: 1,
+        name: "Snake Plant",
+        description: "Perfect for low-light conditions and infrequent watering.",
+        care: "Easy"
+    },
+    {
+        id: 2,
+        name: "Pothos",
+        description: "Adaptable to various light conditions and forgiving of irregular care.",
+        care: "Easy"
+    },
+    {
+        id: 3,
+        name: "ZZ Plant",
+        description: "Thrives in low light and very drought tolerant.",
+        care: "Easy"
+    },
+    {
+        id: 4,
+        name: "Spider Plant",
+        description: "Great for beginners, tolerates a wide range of conditions.",
+        care: "Easy"
+    },
+    {
+        id: 5,
+        name: "Peace Lily",
+        description: "Prefers low to medium light and consistent moisture.",
+        care: "Moderate"
+    },
+    {
+        id: 6,
+        name: "Aloe Vera",
+        description: "Needs bright light and infrequent watering.",
+        care: "Easy"
+    },
+    {
+        id: 7,
+        name: "Fiddle Leaf Fig",
+        description: "Requires bright, indirect light and regular watering.",
+        care: "Moderate"
+    }
+];
