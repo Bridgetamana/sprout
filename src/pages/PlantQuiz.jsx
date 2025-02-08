@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { LuChevronRight, LuArrowLeft } from "react-icons/lu";
-import { questions } from "../components/data";
+import { questions } from "../utils/data";
 
 const API_KEY = import.meta.env.VITE_API_KEY;
 
@@ -61,16 +61,16 @@ const PlantQuiz = () => {
 
   if (showResults) {
     return (
-      <div className="min-h-screen bg-stone-50 py-12">
-        <div className="max-w-2xl mx-auto px-4">
+      <div className="min-h-screen py-12 bg-stone-50">
+        <div className="max-w-2xl px-4 mx-auto">
           <button
             onClick={() => window.history.back()}
-            className="mb-6 flex items-center text-stone-600 hover:text-emerald-700"
+            className="flex items-center mb-6 text-stone-600 hover:text-emerald-700"
           >
             <LuArrowLeft className="mr-2" /> Back
           </button>
-          <div className="bg-white rounded-2xl p-8 shadow-sm">
-            <h2 className="text-2xl font-bold text-stone-800 mb-6">
+          <div className="p-8 bg-white shadow-sm rounded-2xl">
+            <h2 className="mb-6 text-2xl font-bold text-stone-800">
               Your Perfect Plant Matches!
             </h2>
             <div className="space-y-6">
@@ -78,24 +78,24 @@ const PlantQuiz = () => {
                 matchedPlants.map((plant) => (
                   <div 
                     key={plant.id}
-                    className="flex items-center space-x-4 p-4 border border-stone-200 rounded-xl"
+                    className="flex items-center p-4 space-x-4 border border-stone-200 rounded-xl"
                   >
                     {plant.default_image?.thumbnail && (
                       <img
                         src={plant.default_image.thumbnail}
                         alt={plant.common_name}
-                        className="w-16 h-16 rounded-lg object-cover"
+                        className="object-cover w-16 h-16 rounded-lg"
                       />
                     )}
                     <div>
                       <h3 className="font-medium text-stone-800">{plant.common_name}</h3>
                       <p className="text-sm text-stone-600">{plant.scientific_name[0]}</p>
                       <p className="text-sm text-stone-600">Care Level: {plant.care_level}</p>
-                      <div className="mt-2 flex gap-2">
+                      <div className="flex gap-2 mt-2">
                         {plant.sunlight?.map((light, index) => (
                           <span 
                             key={index}
-                            className="inline-block px-2 py-1 bg-emerald-100 text-emerald-700 text-xs rounded-full"
+                            className="inline-block px-2 py-1 text-xs rounded-full bg-emerald-100 text-emerald-700"
                           >
                             {light}
                           </span>
@@ -112,7 +112,7 @@ const PlantQuiz = () => {
             </div>
             <button
               onClick={resetQuiz}
-              className="mt-8 bg-emerald-700 text-white px-6 py-3 rounded-full hover:bg-emerald-800 transition-all hover:scale-105"
+              className="px-6 py-3 mt-8 text-white transition-all rounded-full bg-emerald-700 hover:bg-emerald-800 hover:scale-105"
             >
               Take Quiz Again
             </button>
@@ -123,16 +123,16 @@ const PlantQuiz = () => {
   }
 
   return (
-    <div className="min-h-screen bg-stone-50 py-12">
-      <div className="max-w-2xl mx-auto px-4">
+    <div className="min-h-screen py-12 bg-stone-50">
+      <div className="max-w-2xl px-4 mx-auto">
         <button
           onClick={() => window.history.back()}
-          className="mb-6 flex items-center text-stone-600 hover:text-emerald-700"
+          className="flex items-center mb-6 text-stone-600 hover:text-emerald-700"
         >
           <LuArrowLeft className="mr-2" /> Back
         </button>
-        <div className="bg-white rounded-2xl p-8 shadow-sm">
-          <h2 className="text-2xl font-bold text-stone-800 mb-6">
+        <div className="p-8 bg-white shadow-sm rounded-2xl">
+          <h2 className="mb-6 text-2xl font-bold text-stone-800">
             {questions[currentQuestion].question}
           </h2>
           <div className="space-y-4">
@@ -140,32 +140,32 @@ const PlantQuiz = () => {
               <button
                 key={option.id}
                 onClick={() => handleAnswer(option.id)}
-                className="w-full p-4 text-left border border-stone-200 rounded-xl hover:border-emerald-700 hover:bg-emerald-50 transition-all group"
+                className="w-full p-4 text-left transition-all border border-stone-200 rounded-xl hover:border-emerald-700 hover:bg-emerald-50 group"
               >
-                <div className="flex justify-between items-center">
+                <div className="flex items-center justify-between">
                   <div>
                     <h3 className="font-medium text-stone-800">{option.text}</h3>
                     <p className="text-sm text-stone-600">{option.description}</p>
                   </div>
-                  <LuChevronRight className="text-stone-400 group-hover:text-emerald-700 group-hover:translate-x-1 transition-all" />
+                  <LuChevronRight className="transition-all text-stone-400 group-hover:text-emerald-700 group-hover:translate-x-1" />
                 </div>
               </button>
             ))}
           </div>
-          <p className="text-sm text-stone-600 mt-2">
+          <p className="mt-2 text-sm text-stone-600">
             Question {currentQuestion + 1} of {questions.length}
           </p>
           {currentQuestion > 0 && (
             <button
               onClick={handleBack}
-              className="mt-4 bg-stone-200 text-stone-600 px-4 py-2 rounded-full hover:bg-stone-300 transition-all"
+              className="px-4 py-2 mt-4 transition-all rounded-full bg-stone-200 text-stone-600 hover:bg-stone-300"
             >
               Back
             </button>
           )}
         </div>
         {isLoading && (
-          <div className="animate-pulse space-y-2 mt-6">
+          <div className="mt-6 space-y-2 animate-pulse">
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
