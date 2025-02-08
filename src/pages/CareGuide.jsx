@@ -61,7 +61,7 @@ const CareGuide = () => {
           <img
             src={plant.default_image.thumbnail}
             alt={plant.common_name}
-            className="w-12 h-12 rounded-lg object-cover"
+            className="object-cover w-12 h-12 rounded-lg"
           />
         )}
         <div className="flex-1">
@@ -94,32 +94,44 @@ const CareGuide = () => {
   };
 
   return (
-    <div className="min-h-screen bg-stone-50 py-12">
-      <div className="max-w-6xl mx-auto px-4">
+    <div className="min-h-screen py-8 bg-stone-50">
+      <div className="p-6 px-4 mx-auto max-w-7xl md:px-8 lg:px-10">
         <button
           onClick={() => window.history.back()}
-          className="mb-6 flex items-center text-stone-600 hover:text-emerald-700"
+          className="flex items-center mb-6 text-stone-600 hover:text-emerald-700"
         >
           <LuArrowLeft className="mr-2" /> Back
         </button>
 
-        <div className="grid md:grid-cols-12 gap-8">
+        <div className="py-16 mb-12">
+          <div className="max-w-6xl px-4 mx-auto text-center">
+            <h1 className="mb-4 text-4xl font-bold text-stone-800">
+              Plant Care Guides
+            </h1>
+            <p className="max-w-2xl mx-auto text-lg text-stone-600">
+              Search from our extensive database of plants and discover detailed
+              care instructions to help your plants thrive.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-12">
           <div className="md:col-span-5">
-            <div className="bg-white rounded-2xl px-6 py-9 shadow-sm">
+            <div className="px-6 bg-white shadow-sm rounded-2xl py-9">
               <div className="relative mb-6">
                 <input
                   type="text"
                   placeholder="Search plants..."
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-stone-200 rounded-full focus:outline-none focus:border-emerald-700"
+                  className="w-full py-2 pl-10 pr-4 border rounded-full border-stone-200 focus:outline-none focus:border-emerald-700"
                 />
-                <LuSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-stone-400" />
+                <LuSearch className="absolute transform -translate-y-1/2 left-3 top-1/2 text-stone-400" />
               </div>
 
               <div className="space-y-2 max-h-[calc(100vh-300px)] overflow-y-auto">
                 {searchLoading ? (
-                  <div className="animate-pulse space-y-2">
+                  <div className="space-y-2 animate-pulse">
                     {[1, 2, 3].map((i) => (
                       <div
                         key={i}
@@ -133,7 +145,7 @@ const CareGuide = () => {
                     {searchResults.length > RESULTS_PER_PAGE && (
                       <button
                         onClick={() => setShowAllResults(!showAllResults)}
-                        className="w-full mt-2 py-2 text-center text-emerald-700 hover:text-emerald-800"
+                        className="w-full py-2 mt-2 text-center text-emerald-700 hover:text-emerald-800"
                       >
                         {showAllResults ? (
                           "Show Less"
@@ -147,7 +159,7 @@ const CareGuide = () => {
                     )}
                   </>
                 ) : searchTerm.length > 0 ? (
-                  <p className="text-center text-stone-600 py-4">
+                  <p className="py-4 text-center text-stone-600">
                     No plants found matching &quot;{searchTerm}&quot;
                   </p>
                 ) : null}
@@ -156,11 +168,11 @@ const CareGuide = () => {
           </div>
           <div className="md:col-span-7">
             {loading ? (
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
+              <div className="p-8 bg-white shadow-sm rounded-2xl">
                 <div className="animate-pulse">
-                  <div className="h-8 bg-stone-200 rounded w-3/4 mb-4"></div>
-                  <div className="h-4 bg-stone-200 rounded w-1/2 mb-8"></div>
-                  <div className="grid sm:grid-cols-2 gap-6">
+                  <div className="w-3/4 h-8 mb-4 rounded bg-stone-200"></div>
+                  <div className="w-1/2 h-4 mb-8 rounded bg-stone-200"></div>
+                  <div className="grid gap-6 sm:grid-cols-2">
                     {[1, 2, 3, 4].map((i) => (
                       <div
                         key={i}
@@ -171,47 +183,47 @@ const CareGuide = () => {
                 </div>
               </div>
             ) : error ? (
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
+              <div className="p-8 bg-white shadow-sm rounded-2xl">
                 <p className="text-red-600">{error}</p>
               </div>
             ) : selectedPlant ? (
-              <div className="bg-white rounded-2xl p-8 shadow-sm">
+              <div className="p-8 bg-white shadow-sm rounded-2xl">
                 <div className="flex items-center gap-4 mb-6">
                   {selectedPlant.default_image?.thumbnail && (
                     <img
                       src={selectedPlant.default_image.thumbnail}
                       alt={selectedPlant.common_name}
-                      className="w-16 h-16 rounded-lg object-cover"
+                      className="object-cover w-16 h-16 rounded-lg"
                     />
                   )}
                   <div>
                     <h2 className="text-3xl font-bold text-stone-800">
                       {selectedPlant.common_name}
                     </h2>
-                    <p className="text-stone-600 italic">
+                    <p className="italic text-stone-600">
                       {selectedPlant.scientific_name?.[0]}
                     </p>
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-6 mb-8">
+                <div className="grid gap-6 mb-8 sm:grid-cols-2">
                   <CareDetail
-                    icon={<LuDroplets className="h-6 w-6" />}
+                    icon={<LuDroplets className="w-6 h-6" />}
                     title="Watering"
                     value={selectedPlant.watering}
                   />
                   <CareDetail
-                    icon={<LuSun className="h-6 w-6" />}
+                    icon={<LuSun className="w-6 h-6" />}
                     title="Sunlight"
                     value={selectedPlant.sunlight?.join(", ")}
                   />
                   <CareDetail
-                    icon={<LuWind className="h-6 w-6" />}
+                    icon={<LuWind className="w-6 h-6" />}
                     title="Care Level"
                     value={selectedPlant.care_level}
                   />
                   <CareDetail
-                    icon={<LuThermometerSun className="h-6 w-6" />}
+                    icon={<LuThermometerSun className="w-6 h-6" />}
                     title="Growth Rate"
                     value={selectedPlant.growth_rate}
                   />
@@ -219,7 +231,7 @@ const CareGuide = () => {
 
                 {selectedPlant.description && (
                   <div className="mt-6">
-                    <h3 className="font-medium text-stone-800 mb-2">
+                    <h3 className="mb-2 font-medium text-stone-800">
                       Description
                     </h3>
                     <p className="text-stone-600">
@@ -229,8 +241,8 @@ const CareGuide = () => {
                 )}
               </div>
             ) : (
-              <div className="bg-white rounded-2xl p-8 shadow-sm text-center">
-                <h2 className="text-2xl font-bold text-stone-800 mb-4">
+              <div className="p-8 text-center bg-white shadow-sm rounded-2xl">
+                <h2 className="mb-4 text-2xl font-bold text-stone-800">
                   Select a Plant
                 </h2>
                 <p className="text-stone-600">
