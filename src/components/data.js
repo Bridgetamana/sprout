@@ -1,5 +1,11 @@
 import { LuLeaf, LuBell, LuHeart, LuDroplets, LuSun, LuWind, LuThermometerSun } from "react-icons/lu";
 
+export const navLinks = [
+    { name: "About", href: "#about" },
+    { name: "Features", href: "#features" },
+    { name: "Testimonials", href: "#testimonial" },
+    { name: "FAQs", href: "#faqs" }
+]
 
 export const features = [
     {
@@ -21,20 +27,20 @@ export const features = [
 
 export const testimonials = [
     {
-        name: "Sarah Chen",
+        name: "Sarah Mike",
         role: "Plant Parent of 12",
-        content: "Sprout helped me overcome my fear of killing plants. Now my home is filled with thriving green friends!",
-        rating: 5
+        content: "Sprout helped me save my dying plants. Now my home is filled with thriving green pals!",
+        rating: 4
     },
     {
-        name: "Marcus Rodriguez",
+        name: "John Doe",
         role: "Beginner Plant Parent",
         content: "The plant matching quiz found me the perfect low-maintenance plants for my busy lifestyle.",
         rating: 5
     },
     {
-        name: "Emma Thompson",
-        role: "Urban Gardener",
+        name: "Jane Doe",
+        role: "Gardener",
         content: "The care reminders and guides have been a game-changer for maintaining my indoor jungle.",
         rating: 5
     }
