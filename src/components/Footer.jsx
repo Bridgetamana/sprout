@@ -1,11 +1,11 @@
 import React from "react";
 import {
-  LuSprout,
   LuMail,
   LuFacebook,
   LuTwitter,
   LuInstagram,
 } from "react-icons/lu";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
@@ -14,10 +14,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-12 mb-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <LuSprout className="w-6 h-6 text-emerald-700" />
-              <span className="text-xl font-semibold text-stone-800">
-                sprout
-              </span>
+              <Logo />
             </div>
             <p className="text-stone-600">
               Making plant parenthood simple and enjoyable for everyone.

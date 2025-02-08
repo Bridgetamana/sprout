@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
-import { LuSprout, LuMenu, LuX } from "react-icons/lu";
+import { LuMenu, LuX } from "react-icons/lu";
 import { navLinks } from "../utils/data";
 import { motion } from "framer-motion";
+import Logo from "./Logo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,12 +35,7 @@ const Header = () => {
           aria-label="Global"
         >
           <div className="flex lg:flex-1">
-            <a href="#" className="-m-1.5 p-1.5 flex items-center">
-              <span className="text-xl font-semibold text-stone-800">
-                Sprout
-              </span>
-              <LuSprout className="w-auto h-8 text-emerald-700" />
-            </a>
+            <Logo />
           </div>
           <div className="flex lg:hidden">
             <button
@@ -76,12 +72,7 @@ const Header = () => {
             <div className="fixed inset-0 z-50"></div>
             <div className="fixed inset-y-0 right-0 z-50 w-full px-6 py-6 overflow-y-auto bg-stone-50 sm:max-w-sm">
               <div className="flex items-center justify-between">
-                <a href="#" className="-m-1.5 p-1.5 flex items-center">
-                  <span className="text-xl font-semibold text-emerald-900">
-                    Sprout
-                  </span>
-                  <LuSprout className="w-auto h-8 text-emerald-700" />
-                </a>
+                <Logo />
                 <button
                   type="button"
                   className="-m-2.5 rounded-md p-2.5 text-gray-700"
